@@ -1,23 +1,5 @@
-<!DOCTYPE html>
+<?php
 
-<html lang="en">
+$greeting = "get some!!!";
 
-<head>
-  <meta charset="utf-8">
-  <title>Get some!!!</title>
-  <style>
-    header {
-      background: #e3e3e3;
-      padding: 2em;
-      text-align: center;
-    }
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>
-      <?= "hello " . htmlspecialchars($_GET['name']); ?>
-    </h1>
-  </header>
-</body>
+require 'index.view.php';
