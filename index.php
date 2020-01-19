@@ -17,10 +17,7 @@
 <body>
   <header>
     <h1>
-      <?php
-        $name = $_GET['name'];
-        echo "hey {$name} -- I want you to GET SOME";
-      ?>
+      <?= "hello " . htmlspecialchars($_GET['name']); ?>
     </h1>
   </header>
 </body>
