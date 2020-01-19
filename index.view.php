@@ -16,18 +16,18 @@
 
 <body>
 
+  <h1>Animals</h1>
   <ul>
-    <?php
-      foreach ($names as $name) { echo "<li>{$name}</li>"; }
-    ?>
+    <?php foreach ($animals as $animal) { echo "<li>{$animal}</li>"; } ?>
   </ul>
 
-<hr>
-<p>Alternative shorthad method:</p>
-
+  <h1>Person</h1>
   <ul>
-    <?php foreach ($names as $name) : ?>
-      <li><?= $name ?></li>
-    <?php endforeach ?>
+    <?php foreach ($person as $trait => $value) : ?>
+      <li><strong><?= $trait; ?>:</strong> <?= $value; ?></li>
+    <?php endforeach; ?>
   </ul>
+
+  <h3>Or we can dump with <pre>var_dump()</pre> like this:</h3>
+  <pre><?= var_dump($person) ?></pre>
 </body>
