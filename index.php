@@ -1,10 +1,15 @@
 <?php
 
-$task = [
-  'title' => 'Learn PHP',
-  'due' => 'Wed 22 January, 2020',
-  'assigned_to' => 'Pete',
-  'completed' => false
-];
+require 'functions.php';
+
+$ages = [7, 29, 17, 18];
+
+foreach ($ages as $age) {
+  greet($age);
+  echo "<br><br>";
+}
+
+// 'dd' is a common function name - 'Dump and Die'
+dd("hello everyone");
 
 require 'index.view.php';
