@@ -16,18 +16,14 @@
 
 <body>
 
-  <h1>Animals</h1>
-  <ul>
-    <?php foreach ($animals as $animal) { echo "<li>{$animal}</li>"; } ?>
-  </ul>
+  <p>
+    <ul>
+      <li><strong>Name:</strong> <?= $task['title']; ?></li>
+      <li><strong>Due Date:</strong> <?= $task['due']; ?></li>
+      <li><strong>Assignee:</strong> <?= $task['assigned_to']; ?></li>
+      <li><strong>Status:</strong> <?= $task['completed'] ? 'Complete' : 'Incomplete'; ?></li>
+    </ul>
+  </p>
 
-  <h1>Person</h1>
-  <ul>
-    <?php foreach ($person as $trait => $value) : ?>
-      <li><strong><?= $trait; ?>:</strong> <?= $value; ?></li>
-    <?php endforeach; ?>
-  </ul>
 
-  <h3>Or we can dump with <pre>var_dump()</pre> like this:</h3>
-  <pre><?= var_dump($person) ?></pre>
 </body>
