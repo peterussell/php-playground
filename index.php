@@ -1,9 +1,8 @@
 <?php
 
+$qb = require 'bootstrap.php'; // assigns return value from include to variable
 require 'Task.php';
-require 'functions.php';
 
-$pdo = connectToDb();
-$tasks = fetchAllTasks($pdo);
+$tasks = $qb->selectAll('todos', 'Task');
 
 require 'index.view.php';
