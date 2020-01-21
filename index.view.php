@@ -16,19 +16,17 @@
 
 <body>
 
-  <p>
-    <ul>
-      <li><strong>Name:</strong> <?= $task['title']; ?></li>
-      <li><strong>Due Date:</strong> <?= $task['due']; ?></li>
-      <li><strong>Assignee:</strong> <?= $task['assigned_to']; ?></li>
-      <li><strong>Status:</strong>
-        <?php if ($task['completed']) : ?>
-          <span class="icon">&#9989;</span>
+  <ul>
+    <?php foreach ($tasks as $task) : ?>
+      <li>
+        <?php if($task->isComplete()) : ?>
+          <strike><?= $task->description() ?></strike>
         <?php else : ?>
-          Incomplete
+          <?= $task->description() ?>
         <?php endif; ?>
-    </ul>
-  </p>
+      </li>
+    <?php endforeach; ?>
+  </ul>
 
 
 </body>

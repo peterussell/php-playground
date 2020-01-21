@@ -2,14 +2,32 @@
 
 require 'functions.php';
 
-$ages = [7, 29, 17, 18];
+class Task {
+  protected $description;
+  public function description() { return $this->description; }
 
-foreach ($ages as $age) {
-  greet($age);
-  echo "<br><br>";
+  protected $completed;
+
+  public function __construct($description) {
+    $this->description = $description;
+    $this->completed = false;
+  }
+
+  public function complete() {
+    $this->completed = true;
+  }
+
+  public function isComplete() {
+    return $this->completed;
+  }
 }
 
-// 'dd' is a common function name - 'Dump and Die'
-dd("hello everyone");
+$tasks = [
+  new Task('Clean my room'),
+  new Task('Finish screencast'),
+  new Task('Go to store')
+];
+
+$tasks[0]->complete();
 
 require 'index.view.php';
