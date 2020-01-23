@@ -1,8 +1,11 @@
 <?php
 
-$qb = require 'bootstrap.php'; // assigns return value from include to variable
-require 'Task.php';
+require 'core/Request.php';
 
-$tasks = $qb->selectAll('todos', 'Task');
+$database = require 'core/bootstrap.php'; // assigns return value from include to variable
 
-require 'index.view.php';
+// chaining: equivalent to
+//  $router = Router::load(...);
+//  $router->direct(...);
+require Router::load('routes.php')
+  ->direct(Request::uri());
