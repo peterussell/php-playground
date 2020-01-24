@@ -8,4 +8,4 @@ $database = require 'core/bootstrap.php'; // assigns return value from include t
 //  $router = Router::load(...);
 //  $router->direct(...);
 require Router::load('routes.php')
-  ->direct(Request::uri());
+  ->direct(Request::uri(), Request::method());
