@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>Welcome to <?= $app['company_name']; ?></title>
-  <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+  <link rel="stylesheet" type="text/css" href="app/public/css/style.css">
 </head>
 
 <body>

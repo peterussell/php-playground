@@ -1,5 +1,7 @@
 <?php
 
+use App\Core\App;
+
 App::bind('config', require 'config.php');
 
 App::bind('database', new QueryBuilder(
@@ -13,7 +15,7 @@ function view($viewName, $data = []) {
   //   $name = 'Ted';
   //   $age = 32;
   extract($data);
-  return require "views/{$viewName}.view.php";
+  return require "app/views/{$viewName}.view.php";
 }
 
 function redirect($path) {
